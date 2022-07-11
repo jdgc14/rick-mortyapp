@@ -14,11 +14,6 @@ const SearchBar = ({ getLocation }) => {
             .then(res => { setLocationsSearched(res.data.results) })
     }
 
-    const hello = () => {
-        console.log('hello')
-    }
-    console.log(locationsSearched)
-
     return (
         <div className='my-5'>
             <div>
