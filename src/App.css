@@ -1,0 +1,110 @@
+body {
+    /* background-image: url(https://images5.alphacoders.com/876/876590.png);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat; */
+
+    background: url('https://data.1freewallpapers.com/detail/starry-sky-galaxy-glitter-night.jpg') no-repeat fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.search-bar {
+    font-size:2rem
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+span {
+    color: #02b1c8;
+    font-weight: 800;
+}
+
+.zoom {
+    transition: transform .4s; 
+}
+ 
+.zoom:hover {
+    transform: scale(1.1); 
+}
+
+.location-container {
+    padding: 5rem 8rem
+}
+
+.name-character {
+    font-size: 2rem 
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .location-container {
+        padding: 4rem 2rem
+    }
+
+    span {
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .name-character-container {
+        height: 110px;
+        display: grid;
+        place-content: center
+    }
+
+    .name-character {
+        font-size: 1.5rem 
+    }
+}
+    
+@media screen and (max-width: 576px) {
+    .location-container {
+        padding: 3rem 1rem
+    }
+    
+    span {
+        font-weight: 600;
+    }
+
+    .search-bar {
+        font-size:1.6rem
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .title-name {
+        height: 70%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .location-container {
+        padding: 2rem 1rem
+    }
+
+    .search-bar {
+        font-size:1.1rem
+    }
+
+    p {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+   
+}
+    
