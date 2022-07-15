@@ -20,7 +20,33 @@ const Location = () => {
     useEffect(() => {
         const url = 'https://rickandmortyapi.com/api/location/' + id
         getLocation(url)
+        setResidents(location.residents)
     }, [])
+
+    const [index, setIndex] = useState(0)
+
+    const [residents, setResidents] = useState([])
+
+    const pageUp = () => {
+        const newResisdents = []
+        for (let i = index + 1; i < index + 6; i++) {
+            if (residents[i]) {
+                newResisdents.push(residents[i])
+            }
+        }
+        setIndex(index + 6)
+        return newResisdents
+    }
+
+    const pageDown = () => {
+        const newResisdents = []
+        for (let i = index - 12; i < index - 6; i++) {
+            newResisdents.push(residents[i])
+            
+        }
+        setIndex(index - 6)
+        return newResisdents
+    }
 
     return (
         <div className='location-container'>
