@@ -8,8 +8,8 @@ const Location = () => {
 
     const getRandomInt = (max) => Math.floor(Math.random() * max)
 
-    // const id = getRandomInt(127)
-    const id = 1
+    const id = getRandomInt(127)
+    // const id = 1
 
     const [location, setLocation] = useState([])
 
