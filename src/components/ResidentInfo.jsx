@@ -33,11 +33,11 @@ const ResidentInfo = ({ residentUrl }) => {
     }, [])
 
     return (
-        <div className='col-sm-12 col-md-6 col-lg-3 p-3'>
+        <div className='col-sm-12 col-md-6 col-lg-3 px-3'>
             <div className='rounded-3 zoom card-character'>
                 <div className='slide slide1'>
                     <div className='photo'>
-                        <h4 className={`position-absolute p-2 rounded-4 ${bgAliveorDead()}`} style={{ top: '10px', left: '20px' }}>{resident.status}</h4>
+                        <h5 className={`position-absolute p-1 rounded-4 ${bgAliveorDead()}`} style={{ top: '5px', right: '10px' }}>{resident.status}</h5>
                         <img src={resident.image} className='rounded-3' style={{ width: '100%', height:'100%' }} />
                     </div>
                 </div>

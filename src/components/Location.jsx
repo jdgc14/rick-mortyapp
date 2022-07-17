@@ -29,8 +29,6 @@ const Location = () => {
         numbers.push(i);
     }
 
-
-
     const getLocation = (url) => {
         axios.get(url)
             .then(res => {
@@ -43,7 +41,6 @@ const Location = () => {
         getLocation(url)
 
     }, [])
-
 
     return (
         <div className='location-container'>

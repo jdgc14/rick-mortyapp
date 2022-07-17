@@ -10,7 +10,8 @@ h2 {
 }
 
 h3,
-h4 {
+h4,
+h5 {
     font-weight: 600;
 }
 
@@ -20,13 +21,13 @@ span {
 }
 
 /* ANIMATIONS */
-/* .zoom {
+.zoom {
   transition: transform 0.4s;
 }
 
 .zoom:hover {
-  transform: scale(1.1);
-} */
+  transform: scale(1.2);
+}
 
 /* CLASSES */
 
@@ -84,11 +85,7 @@ span {
     }
 }
 
-.card-character {}
-
 .slide {
-
-    /* width: 300px; */
 
     height: 200px;
 
