@@ -13,46 +13,37 @@ const Location = () => {
 
     const [location, setLocation] = useState([])
 
-    const [residents, setResidents] = useState([])
+    const [page, setPage] = useState(1)
 
-    const [index, setIndex] = useState(0)
+    const lastIndex = page * 8
+
+    const firstIndex = lastIndex - 8
+
+    const residentsPaginated = location.residents?.slice(firstIndex, lastIndex)
+
+    const lastPage = Math.ceil(location.residents?.length / 8);
+
+    const numbers = []
+
+    for (let i = 1; i <= lastPage; i++) {
+        numbers.push(i);
+    }
+
+
 
     const getLocation = (url) => {
         axios.get(url)
-            .then(res => { setLocation(res.data) })
+            .then(res => {
+                setLocation(res.data)
+            })
     }
 
     useEffect(() => {
         const url = 'https://rickandmortyapi.com/api/location/' + id
         getLocation(url)
+
     }, [])
 
-    
-
-    
-
-    const pageUp = () => {
-        const newResisdents = []
-        for (let i = index; i < index + 6; i++) {
-            if (residents?.[i]) {
-                newResisdents.push(residents[i])
-            }
-        }
-        setIndex(index + 6)
-        console.log(newResisdents)
-        return newResisdents
-    }
-
-    const pageDown = () => {
-        const newResisdents = []
-        for (let i = index - 12; i < index - 6; i++) {
-            newResisdents.push(residents[i])
-            
-        }
-        setIndex(index - 6)
-        console.log(newResisdents)
-        return newResisdents
-    }
 
     return (
         <div className='location-container'>
@@ -66,12 +57,17 @@ const Location = () => {
             </div>
             <SearchBar getLocation={getLocation} />
             <div className="row">
-                {location.residents?.map(resident => (
+                {residentsPaginated?.map(resident => (
                     <ResidentInfo key={resident} residentUrl={resident} />
                 ))}
             </div>
-            <button onClick={pageUp} className='btn btn-primary m-4'>Page Up</button>
-            <button onClick={pageDown} className='btn btn-primary m-4'>Page Down</button>
+            <div className='d-flex justify-content-center my-5'>
+                <button onClick={() => setPage(page - 1)} className={`btn btn-secondary m-4 ${page === 1 && 'disabled'}`}>Page Down</button>
+                {numbers.map(number => (
+                    <button onClick={() => setPage(number)} className='btn btn-secondary m-4'>{number}</button>
+                ))}
+                <button onClick={() => setPage(page + 1)} className={`btn btn-secondary m-4 ${page === lastPage && 'disabled'}`}>Page Up</button>
+            </div>
         </div>
     );
 };
