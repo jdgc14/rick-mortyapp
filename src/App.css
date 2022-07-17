@@ -1,30 +1,41 @@
 body {
-    background: url('https://data.1freewallpapers.com/detail/starry-sky-galaxy-glitter-night.jpg') no-repeat fixed;
+    background: url("https://data.1freewallpapers.com/detail/starry-sky-galaxy-glitter-night.jpg") no-repeat fixed;
     background-size: cover;
     color: #fff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 h2 {
     font-weight: 800;
 }
 
-h3, h4 {
+h3,
+h4 {
     font-weight: 600;
 }
 
 span {
     color: #02b1c8;
     font-weight: 800;
-
 }
+
+/* ANIMATIONS */
+/* .zoom {
+  transition: transform 0.4s;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+} */
+
+/* CLASSES */
 
 .location-container {
     padding: 5rem 8rem;
 }
 
 .search-bar {
-    font-size: 2rem
+    font-size: 2rem;
 }
 
 .card-character {
@@ -32,27 +43,19 @@ span {
 }
 
 .name-character-container {
-    height: 5rem;
+    height: 3rem;
     display: grid;
     place-content: center;
 }
 
-.zoom {
-    transition: transform .4s;
-}
-
-.zoom:hover {
-    transform: scale(1.1);
-}
-
 @media screen and (max-width: 768px) {
     .location-container {
-        padding: 3rem 1.5rem
+        padding: 3rem 1.5rem;
     }
 
-    .card-character{
-        width: 65%;
-    }
+    .card-character {
+    width: 65%;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -60,17 +63,18 @@ span {
         height: 65%;
         margin: auto;
     }
-    
-    .name-character-container {
-        height: 4rem;
-    }
+
 
     .location-container {
-        padding: 2rem 1rem
+        padding: 2rem 1rem;
     }
 
     .search-bar {
-        font-size: 1.1rem
+        font-size: 1.1rem;
+    }
+
+    .name-character-container {
+        height: 2rem;
     }
 }
 
@@ -78,4 +82,77 @@ span {
     .title-name {
         height: 60%;
     }
+}
+
+.card-character {}
+
+.slide {
+
+    /* width: 300px; */
+
+    height: 200px;
+
+    transition: 0.5s;
+
+}
+
+.slide1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: .7s;
+    transform: translateY(100px);
+}
+
+.card-character:hover .slide.slide1 {
+
+    transform: translateY(0px);
+
+}
+
+.photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: .8s;
+    transform: translateY(-100px);
+    box-shadow: 0 20px 40px rgb(0 0 0 / 40%);
+}
+
+.card-character:hover .slide.slide2 {
+
+    transform: translateY(0px);
+
+}
+
+.card-character .slide.slide2::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 30px;
+
+    height: 4px;
+
+    bottom: 15px;
+
+    left: 50%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
 }
