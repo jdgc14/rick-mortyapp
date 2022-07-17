@@ -33,19 +33,19 @@ const ResidentInfo = ({ residentUrl }) => {
     }, [])
 
     return (
-        <div className='col-sm-12 col-md-6 p-3 my-2'>
+        <div className='col-sm-12 col-md-6 col-lg-4 p-3 my-2'>
             <div className='bg-dark rounded-3 zoom card-character'>
                 <div className='position-relative'>
-                    <p className={`position-absolute p-2 rounded-4 ${bgAliveorDead()}`} style={{ top: '10px', left: '20px' }}>{resident.status}</p>
-                    <img src={resident.image} className='rounded-3' style={{ width: '100%' }} />
+                    <h4 className={`position-absolute p-2 rounded-4 ${bgAliveorDead()}`} style={{ top: '10px', left: '20px' }}>{resident.status}</h4>
+                    <img src={resident.image} className='rounded-3' style={{width: '100%', maxHeight: '25rem'}}/>
                 </div>
                 <div className='d-flex flex-column gap-3'>
                     <div className='border-bottom border-2 name-character-container text-center'>
-                        <p className='my-auto name-character'>{resident.name}</p>
+                        <h4 className='my-auto'>{resident.name}</h4>
                     </div>
                     <div className='mx-3'>
-                        <p>Origin:<br />{resident.originName}</p>
-                        <p>Number of episodes:<br />{resident.episode}</p>
+                        <h6>Origin:<br /><span>{resident.originName}</span></h6>
+                        <h6>Number of episodes:<br /><span>{resident.episode}</span></h6>
                     </div>
                 </div>
             </div>

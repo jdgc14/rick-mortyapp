@@ -15,7 +15,7 @@ const SearchBar = ({ getLocation }) => {
     }
 
     return (
-        <div className='my-5'>
+        <div className='my-4'>
             <div>
                 <input value={search} placeholder='Search a Location' type="text" className='rounded-2 search-bar' onChange={
                     (e) => {
