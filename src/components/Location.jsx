@@ -46,14 +46,14 @@ const Location = () => {
         <div className='location-container'>
             <div style={{ background: '#062226' }} className='text-center rounded-4 p-4'>
                 <h1>{location.name}</h1>
-                <div className='d-flex justify-content-around'>
+                <div className='d-flex flex-column flex-lg-row justify-content-around'>
                     <h4>Type:<br /><span>{location.type}</span></h4>
                     <h4>Dimension:<br /><span>{location.dimension}</span></h4>
                     <h4>Population:<br /><span>{location.residents?.length}</span></h4>
                 </div>
             </div>
             <SearchBar getLocation={getLocation} />
-            <div className="row">
+            <div className="row justify-content-center">
                 {residentsPaginated?.map(resident => (
                     <ResidentInfo key={resident} residentUrl={resident} />
                 ))}
@@ -63,7 +63,7 @@ const Location = () => {
                 {numbers.map(number => (
                     <button onClick={() => setPage(number)} className='btn btn-secondary m-4'>{number}</button>
                 ))}
-                <button onClick={() => setPage(page + 1)} className={`btn btn-secondary m-4 ${page === lastPage && 'disabled'}`}>Page Up</button>
+                <button onClick={() => setPage(page + 1)} className={`btn btn-secondary m-4 ${(page === lastPage || lastPage === 0) && 'disabled'}`}>Page Up</button>
             </div>
         </div>
     );
