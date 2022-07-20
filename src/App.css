@@ -5,13 +5,20 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-h2 {
+h1, h2 {
     font-weight: 800;
 }
 
 h3,
-h4 {
+h4,
+h5,
+h6 {
     font-weight: 600;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
 }
 
 span {
@@ -19,14 +26,19 @@ span {
     font-weight: 800;
 }
 
+h6 + h5 {
+    color: #02b1c8;
+    font-weight: 800;
+}
+
 /* ANIMATIONS */
-/* .zoom {
+.zoom {
   transition: transform 0.4s;
 }
 
 .zoom:hover {
-  transform: scale(1.1);
-} */
+  transform: scale(1.2);
+}
 
 /* CLASSES */
 
@@ -48,13 +60,20 @@ span {
     place-content: center;
 }
 
+.footer {
+    display: grid;
+    place-content: center;
+    padding: 4rem;
+    background: #202329;
+}
+
 @media screen and (max-width: 768px) {
     .location-container {
         padding: 3rem 1.5rem;
     }
 
     .card-character {
-    width: 65%;
+    width: 55%;
   }
 }
 
@@ -84,11 +103,7 @@ span {
     }
 }
 
-.card-character {}
-
 .slide {
-
-    /* width: 300px; */
 
     height: 200px;
 
